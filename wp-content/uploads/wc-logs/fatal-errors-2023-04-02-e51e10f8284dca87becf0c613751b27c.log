@@ -1,0 +1,6 @@
+2023-04-02T14:26:13+00:00 CRITICAL Out of memory (allocated 75497472) (tried to allocate 20480 bytes) in C:\xampp\htdocs\w2\wp-includes\rest-api.php on line 3285
+
+2023-04-02T16:05:10+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\w2\wp-includes\Requests\src\Transport\Curl.php on line 510
+
+2023-04-02T16:07:44+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\w2\wp-includes\Requests\src\Transport\Curl.php on line 510
+
