@@ -14,3 +14,37 @@ RewriteRule . /w2/index.php [L]
 </IfModule>
 
 # END WordPress
+# BEGIN Speed Optimizer by 10Web
+# The directives (lines) between "BEGIN Speed Optimizer by 10Web" and "END Speed Optimizer by 10Web" are
+# dynamically generated, and should only be modified via WordPress filters.
+# Any changes to the directives between these markers will be overwritten.
+
+        <IfModule mod_rewrite.c>
+          RewriteEngine On
+
+          # Does browser explicitly support webp?
+          RewriteCond %{HTTP_USER_AGENT} Chrome [OR]
+          # OR Is request from Page Speed
+          RewriteCond %{HTTP_USER_AGENT} "Google Page Speed Insights" [OR]
+          # OR does this browser explicitly support webp
+          RewriteCond %{HTTP_ACCEPT} image/webp
+          # AND NOT MS EDGE 42/17 - doesnt work.
+          RewriteCond %{HTTP_USER_AGENT} !Edge/17
+          # AND is the request a jpg, png or gif?
+          RewriteCond %{REQUEST_URI} ^(.+)\.(?:jpe?g|png|gif)$
+          # AND does a .ext.webp image exist?
+          RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}.webp -f
+          # THEN send the webp image and set the env var webp
+          RewriteRule ^(.+)$ $1.webp [NC,T=image/webp,E=webp,L]
+        </IfModule>
+        
+        <IfModule mod_headers.c>
+          # If REDIRECT_webp env var exists, append Accept to the Vary header
+          Header append Vary Accept env=REDIRECT_webp
+        </IfModule>
+
+        <IfModule mod_mime.c>
+          AddType image/webp .webp
+        </IfModule>
+        
+# END Speed Optimizer by 10Web
