@@ -12,6 +12,5 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /w2/index.php [L]
 </IfModule>
-	
-php_value max_execution_time 300
+
 # END WordPress

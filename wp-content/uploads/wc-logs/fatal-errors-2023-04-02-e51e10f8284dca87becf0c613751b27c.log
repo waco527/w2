@@ -4,3 +4,5 @@
 
 2023-04-02T16:07:44+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\w2\wp-includes\Requests\src\Transport\Curl.php on line 510
 
+2023-04-02T18:23:29+00:00 CRITICAL Cannot redeclare filter_created_pages() (previously declared in C:\xampp\htdocs\w2\wp-content\plugins\woocommerce\includes\wc-update-functions.php:2293) in C:\xampp\htdocs\w2\wp-content\plugins\woocommerce\includes\wc-update-functions.php on line 2293
+
